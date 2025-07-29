@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/consciousness-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Consciousness Exploration | A Journey Beyond the Mind</title>
+    <meta name="description" content="Welcome to a space where consciousness meets contemplation, and thoughts unfold into understanding. A journey beyond the mind into the heart of what you truly are." />
+    <meta name="keywords" content="consciousness, spirituality, philosophy, awakening, mindfulness, contemplation, awareness, self-inquiry" />
+    <meta name="author" content="Your Name" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-site-name.netlify.app/" />
+    <meta property="og:title" content="Consciousness Exploration | A Journey Beyond the Mind" />
+    <meta property="og:description" content="Welcome to a space where consciousness meets contemplation, and thoughts unfold into understanding." />
+    <meta property="og:image" content="https://your-site-name.netlify.app/og-image.jpg" />
+    <meta property="og:site_name" content="Consciousness Exploration" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://your-site-name.netlify.app/" />
+    <meta property="twitter:title" content="Consciousness Exploration | A Journey Beyond the Mind" />
+    <meta property="twitter:description" content="Welcome to a space where consciousness meets contemplation, and thoughts unfold into understanding." />
+    <meta property="twitter:image" content="https://your-site-name.netlify.app/og-image.jpg" />
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
+    <!-- Prevent flash of unstyled content -->
+    <style>
+      html { 
+        background-color: #0a0a0f; 
+        color: #f4f4f5;
+        scroll-behavior: smooth;
+      }
+      body { 
+        margin: 0; 
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root { 
+        min-height: 100vh; 
+        display: flex;
+        flex-direction: column;
+      }
+      /* Loading indicator */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0a0a0f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(34, 211, 238, 0.2);
+        border-top: 2px solid #22d3ee;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loading-screen" id="loading-screen">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Remove loading screen once page is loaded
+      window.addEventListener('load', () => {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.remove();
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>
