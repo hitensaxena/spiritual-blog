@@ -68,7 +68,10 @@ Visit the live website: [https://your-site-name.netlify.app](https://your-site-n
    - Click "New site from Git"
    - Connect your GitHub account
    - Select your repository
-   - Build settings are automatically detected from `netlify.toml`
+   - Build settings are automatically detected from `netlify.toml`:
+     - Build command: `npm run build`
+     - Publish directory: `dist`
+     - Node version: `18`
    - Click "Deploy site"
 
 3. **Custom Domain (Optional)**
@@ -78,8 +81,9 @@ Visit the live website: [https://your-site-name.netlify.app](https://your-site-n
 
 ### Option 2: Manual Deploy
 
-1. **Build the project**
+1. **Build the project locally first**
    ```bash
+   npm install
    npm run build
    ```
 
@@ -90,6 +94,25 @@ Visit the live website: [https://your-site-name.netlify.app](https://your-site-n
      npm install -g netlify-cli
      netlify deploy --prod --dir=dist
      ```
+
+### 🔧 Troubleshooting Deployment Issues
+
+**Build fails with plugin errors:**
+- The `netlify.toml` has optional plugins commented out to avoid dependency issues
+- If you want to add plugins, install them first: `npm install -D @netlify/plugin-sitemap`
+
+**Build fails with module resolution:**
+- Ensure all imports use relative paths (e.g., `./components/HeroSection`)
+- Check that all component files exist in the correct directories
+
+**Motion/Framer Motion issues:**
+- The project uses `motion` (new name for Framer Motion)
+- Ensure imports use: `import { motion } from 'motion/react'`
+
+**Build succeeds but site doesn't load:**
+- Check browser console for errors
+- Verify all image URLs are accessible
+- Check that the build output in `dist/` folder is complete
 
 ## 📁 Project Structure
 
@@ -223,4 +246,4 @@ If you have any questions or need help with deployment:
 2. Customize content and colors
 3. Share your consciousness exploration journey
 
-Built with ❤️ for mindful contemplation and philosophical inquiry.# spiritual-blog
+Built with ❤️ for mindful contemplation and philosophical inquiry.
