@@ -97,6 +97,11 @@ Visit the live website: [https://your-site-name.netlify.app](https://your-site-n
 
 ### 🔧 Troubleshooting Deployment Issues
 
+**Build fails with PostCSS/Tailwind errors:**
+- The project uses Tailwind CSS v4 alpha with the `@tailwindcss/postcss` plugin
+- Make sure both `tailwindcss` and `@tailwindcss/postcss` are installed in devDependencies
+- PostCSS configuration is set to use CommonJS format for better compatibility
+
 **Build fails with plugin errors:**
 - The `netlify.toml` has optional plugins commented out to avoid dependency issues
 - If you want to add plugins, install them first: `npm install -D @netlify/plugin-sitemap`
@@ -113,6 +118,10 @@ Visit the live website: [https://your-site-name.netlify.app](https://your-site-n
 - Check browser console for errors
 - Verify all image URLs are accessible
 - Check that the build output in `dist/` folder is complete
+
+**CSS/Styling issues:**
+- If styles aren't applying correctly, verify the PostCSS configuration is correct
+- Check that the Tailwind CSS imports in `globals.css` are processing correctly
 
 ## 📁 Project Structure
 

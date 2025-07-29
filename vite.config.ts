@@ -12,7 +12,7 @@ export default defineConfig({
       "@/styles": path.resolve(__dirname, "./styles"),
     },
   },
-  base: "./",
+
   build: {
     outDir: 'dist',
     sourcemap: false,
