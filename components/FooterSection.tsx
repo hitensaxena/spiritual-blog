@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { Heart, Eye, Feather, Mail, Twitter, Instagram } from 'lucide-react'
 
 const navigationCategories = [

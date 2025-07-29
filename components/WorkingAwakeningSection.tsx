@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Eye, Brain, Circle, Heart, Sparkles } from 'lucide-react'
 
 const awakeningStages = [
